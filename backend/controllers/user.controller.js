@@ -59,7 +59,7 @@ export const login = async (req, res) => {
         if (!isPasswordMatch) {
             return res.status(400).json({
                 message: 'Incorrect email or password',
-                success: flase
+                success: false
             })
         }
         // check role is correct or not
@@ -82,12 +82,15 @@ export const login = async (req, res) => {
             email: user.email,
             phoneNumber: user.phoneNumber,
             role: user.role,
-            profie: user.profile
+            profile: user.profile
         }
 
-        return res.status(200).cookie("token", token, { maxAge: 1 * 24 * 60 * 60 * 1000, httpsOnly: true, sameSite: 'strict' }).json({
+        res.cookie("token", token, { httpOnly: true, secure: true, maxAge: 1 * 24 * 60 * 60 * 1000 })
+
+        return res.status(200).json({
             message: `Welcome back ${user.fullname}`,
             user,
+            token,
             success: true
         })
     } catch (error) {
@@ -109,6 +112,7 @@ export const logout = async (req, res) => {
 export const updateProfile = async (req, res) => {
     try {
         const { fullname, email, phoneNumber, bio, skills } = req.body;
+
         const file = req.file;
 
 
@@ -116,8 +120,10 @@ export const updateProfile = async (req, res) => {
 
         let skillArray;
         if (skills) {
-            skillArray = skills.split(",");
+            skillArray = skills.split(",").map(skills => skills.trim());
         }
+
+
 
         const userId = req.id; // middleware authentication
         let user = await User.findById(userId);
@@ -128,6 +134,7 @@ export const updateProfile = async (req, res) => {
                 success: false
             })
         }
+
 
         // updatig data
         if (fullname) user.fullname = fullname
@@ -148,9 +155,10 @@ export const updateProfile = async (req, res) => {
             email: user.email,
             phoneNumber: user.phoneNumber,
             role: user.role,
-            profie: user.profile
+            profile: user.profile
         }
 
+        
         return res.status(200).json({
             message: "Profile updated successfully",
             user,
