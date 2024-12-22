@@ -10,6 +10,7 @@ import { USER_API_END_POINT } from '@/utils/constant'
 import { toast } from 'sonner'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLoading } from '@/redux/authSlice'
+import { Loader2 } from 'lucide-react'
 
 const Signup = () => {
 
@@ -125,12 +126,12 @@ const Signup = () => {
                 <Input
                   type="radio"
                   name="role"
-                  value="requiter"
-                  checked={input.role === 'requiter'}
+                  value="recruiter"
+                  checked={input.role === 'recruiter'}
                   onChange={changeEventHandler}
                   className="cursor-pointer"
                 />
-                <Label htmlFor="r2">Requiter</Label>
+                <Label htmlFor="r2">Recruiter</Label>
               </div>
             </RadioGroup>
             <div className='flex items-center gap-2'>

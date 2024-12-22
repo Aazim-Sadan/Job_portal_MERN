@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../shared/Navbar'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
@@ -9,20 +9,18 @@ import { toast } from 'sonner'
 import axios from 'axios'
 import { USER_API_END_POINT } from '@/utils/constant'
 import { useDispatch, useSelector } from 'react-redux'
-import { setLoading } from '@/redux/authSlice'
+import { setLoading, setUser } from '@/redux/authSlice'
 import { Loader2 } from 'lucide-react'
 
 
 const Login = () => {
-
-
   const [input, setInput] = useState({
     email: "",
     password: "",
     role: ""
   });
 
-  const { loading } = useSelector(store => store.auth);
+  const { loading, user } = useSelector(store => store.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -35,8 +33,12 @@ const Login = () => {
    
     try {
       dispatch(setLoading(true));
-      const res = await axios.post(`${USER_API_END_POINT}/login`, input)
+      const res = await axios.post(`${USER_API_END_POINT}/login`, input);
+
       if (res.data.success) {
+        localStorage.setItem("token", res.data.token);
+
+        dispatch(setUser(res.data.user));
         navigate("/");
         toast.success(res.data.message);
       }
@@ -47,6 +49,11 @@ const Login = () => {
       dispatch(setLoading(false))
     }
   }
+  useEffect(()=>{
+    if(user){
+        navigate("/");
+    }
+},[])
 
   return (
     <div>
@@ -91,12 +98,12 @@ const Login = () => {
                 <Input
                   type="radio"
                   name="role"
-                  value="requiter"
-                  checked={input.role === 'requiter'}
+                  value="recruiter"
+                  checked={input.role === 'recruiter'}
                   onChange={changeEventHandler}
                   className="cursor-pointer"
                 />
-                <Label htmlFor="r2">Requiter</Label>
+                <Label htmlFor="r2">Recruiter</Label>
               </div>
             </RadioGroup>
           </div>
