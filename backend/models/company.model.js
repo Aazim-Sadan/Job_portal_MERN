@@ -20,7 +20,7 @@ const companySchema = new mongoose.Schema({
     },
     userId:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Appliction',
+        ref: 'User',
         required: true
     }]
 }, {timestamps:true})
