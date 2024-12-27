@@ -32,14 +32,16 @@ const Navbar = () => {
         }
     }
 
+   
+
     return (
-        <div className=' bg-white'>
+        <div className=' bg-white mx-2'>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
                 <div >
                     <h1 className='text-2xl font-bold'>Job<span className='text-[#F83002]'>Portal</span></h1>
                 </div>
-                <div className='flex items-center gap-12'>
-                    <ul className='flex font-medium items-center gap-5'>
+                <div className='flex items-center gap-4 sm:gap-12'>
+                    <ul className='flex font-medium items-center gap-3 sm:gap-5'>
                         {
                             user && user.role === 'recruiter' ? (
                                 <>
@@ -55,6 +57,7 @@ const Navbar = () => {
                             )
                         }
                     </ul>
+                    
                     {
                         !user ? (
                             <div className='flex items-center gap-2'>

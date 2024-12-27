@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../shared/Navbar'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
@@ -24,7 +24,7 @@ const Signup = () => {
     file: ""
   });
 
-  const { loading } = useSelector(store => store.auth);
+  const { loading, user } = useSelector(store => store.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -48,13 +48,13 @@ const Signup = () => {
     if (input.file) {
       formData.append("file", input.file);
     }
+
     try {
       dispatch(setLoading(true));
       const res = await axios.post(`${USER_API_END_POINT}/register`, formData)
-      if (res.data.success) {
-        navigate("/login");
-        toast.success(res.data.message);
-      }
+
+      navigate("/login");
+      toast.success(res.data.message);
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
@@ -62,6 +62,12 @@ const Signup = () => {
       dispatch(setLoading(false));
     }
   }
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [])
 
 
   return (

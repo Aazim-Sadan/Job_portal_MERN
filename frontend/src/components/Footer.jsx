@@ -5,15 +5,16 @@ const Footer = () => {
     <footer className="border-t border-t-gray-200 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+          <div className="mb-4 md:mb-0 text-center md:text-left">
             <h2 className="text-xl font-bold">Job Hunt</h2>
             <p className="text-sm">&copy; 2024 Your Company. All rights reserved.</p>
           </div>
 
           <div className="flex space-x-4 mt-4 md:mt-0">
-            {/* Facebook */}
+
             <a
-              href="https://facebook.com"
+            target='blank'
+              href="https://github.com/Aazim-Sadan"
               className="hover:text-gray-400"
               aria-label="Facebook"
             >
@@ -22,11 +23,11 @@ const Footer = () => {
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path d="M22.676 0H1.324C.593 0 0 .592 0 1.326V22.67c0 .73.592 1.324 1.324 1.324h11.495V14.91h-3.13v-3.662h3.13V8.41c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.465.098 2.797.143v3.24l-1.918.001c-1.504 0-1.795.716-1.795 1.763v2.312h3.588l-.467 3.662h-3.121V24H22.67c.73 0 1.324-.593 1.324-1.324V1.326C24 .592 23.406 0 22.676 0z" />
+                <path d="M12 .296C5.373.296 0 5.671 0 12.296c0 5.292 3.438 9.774 8.205 11.364.6.11.82-.261.82-.577v-2.234c-3.338.724-4.042-1.414-4.042-1.414-.546-1.386-1.333-1.755-1.333-1.755-1.089-.745.083-.73.083-.73 1.205.084 1.838 1.238 1.838 1.238 1.07 1.835 2.807 1.306 3.492.998.108-.775.418-1.306.76-1.605-2.665-.302-5.467-1.332-5.467-5.93 0-1.31.467-2.381 1.236-3.222-.124-.303-.535-1.52.117-3.166 0 0 1.007-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.403c1.018.004 2.045.137 3.003.403 2.293-1.552 3.298-1.23 3.298-1.23.655 1.645.244 2.863.12 3.166.77.84 1.236 1.911 1.236 3.222 0 4.61-2.807 5.624-5.479 5.92.43.37.81 1.102.81 2.222v3.293c0 .319.219.694.825.576C20.565 22.066 24 17.588 24 12.296 24 5.671 18.627.296 12 .296z" />
               </svg>
+
             </a>
 
-            {/* Twitter */}
             <a
               href="https://twitter.com"
               className="hover:text-gray-400"
@@ -41,9 +42,9 @@ const Footer = () => {
               </svg>
             </a>
 
-            {/* LinkedIn */}
             <a
-              href="https://linkedin.com"
+              target='blank'
+              href="https://www.linkedin.com/in/aazim-sadan"
               className="hover:text-gray-400"
               aria-label="LinkedIn"
             >

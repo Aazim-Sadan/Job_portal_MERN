@@ -8,6 +8,7 @@ const useGetAllJobs = () => {
 
 
     const dispatch = useDispatch();
+    const {searchQuery} = useSelector(store=> store.job);
     const { user } = useSelector(store => store.auth);
 
     const token = user?.token || localStorage.getItem("token");
@@ -22,7 +23,7 @@ const useGetAllJobs = () => {
 
         const fetchAllJobs = async () => {
             try {
-                const res = await axios.get(`${JOB_API_END_POINT}/get`,
+                const res = await axios.get(`${JOB_API_END_POINT}/get?keyword=${searchQuery}`,
                     {
                         headers: { "Authorization": `Bearer ${token}` },
                         withCredentials: true
