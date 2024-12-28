@@ -4,17 +4,21 @@ import { Bookmark } from 'lucide-react'
 import { Avatar, AvatarImage } from './ui/avatar'
 import { Badge } from './ui/badge'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { setSavedJobs } from '@/redux/jobSlice'
 
 const Job = ({ job }) => {
 
+    const dispatch = useDispatch();
     const navigate = useNavigate()
+
     // const jobId = "fhiffknjd"
 
     const daysAgoFunction = (mongodbTime) => {
         const createdAt = new Date(mongodbTime);
         const currentTime = new Date();
         const timeDifference = currentTime - createdAt;
-        return Math.floor(timeDifference/ (1000*24*60*60));
+        return Math.floor(timeDifference / (1000 * 24 * 60 * 60));
     }
 
     return (
@@ -49,7 +53,7 @@ const Job = ({ job }) => {
 
             <div className='flex items-center gap-4 mt-4'>
                 <Button onClick={() => navigate(`/description/${job?._id}`)} variant='outline'>Details</Button>
-                <Button className='bg-[#7209b7]'>Save For Later</Button>
+                <Button onClick={() => dispatch(setSavedJobs(job))} className='bg-[#7209b7]'>Save For Later</Button>
             </div>
         </div>
     )

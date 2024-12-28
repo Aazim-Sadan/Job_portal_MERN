@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Popover, PopoverContent, PopoverTrigger } from '@radix-ui/react-popover'
 import { Avatar, AvatarImage } from '../ui/avatar'
 import { Button } from '../ui/button'
-import { LogOut, User2 } from 'lucide-react'
+import { LogOut, SaveAll, User2 } from 'lucide-react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'sonner'
 import axios from 'axios'
@@ -32,13 +32,13 @@ const Navbar = () => {
         }
     }
 
-   
+
 
     return (
         <div className=' bg-white mx-2'>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
                 <div >
-                    <h1 className='text-2xl font-bold'>Job<span className='text-[#F83002]'>Portal</span></h1>
+                    <h1 className='text-2xl font-bold'> <Link to="/">Job<span className='text-[#F83002]'>Portal</span></Link></h1>
                 </div>
                 <div className='flex items-center gap-4 sm:gap-12'>
                     <ul className='flex font-medium items-center gap-3 sm:gap-5'>
@@ -57,7 +57,7 @@ const Navbar = () => {
                             )
                         }
                     </ul>
-                    
+
                     {
                         !user ? (
                             <div className='flex items-center gap-2'>
@@ -91,6 +91,10 @@ const Navbar = () => {
                                                     </div>
                                                 )
                                             }
+                                            <div className='flex w-fit items-center gap-2 cursor-pointer'>
+                                                <SaveAll />
+                                                <Button variant="link"> <Link to='/savedjobs'> Saved Jobs</Link></Button>
+                                            </div>
                                             <div className='flex w-fit items-center gap-2 cursor-pointer'>
                                                 <LogOut />
                                                 <Button onClick={logoutHandler} variant="link">Logout</Button>
