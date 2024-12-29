@@ -15,10 +15,10 @@ const useGetCompanyById = (companyId) => {
 
     useEffect(() => {
 
-        if (!token) {
-            toast.error("User is not authenticated. Please log in again.");
-            return;
-        }
+        // if (!token) {
+        //     toast.error("User is not authenticated. Please log in again.");
+        //     return;
+        // }
 
 
         const fetchSingleCompany = async () => {

@@ -16,10 +16,10 @@ const useGetAllJobs = () => {
 
     useEffect(() => {
 
-        if (!token) {
-            toast.error("User is not authenticated. Please log in again.");
-            return;
-        }
+        // if (!token) {
+        //     toast.error("User is not authenticated. Please log in again.");
+        //     return;
+        // }
 
 
         const fetchAllJobs = async () => {

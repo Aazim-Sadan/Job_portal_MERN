@@ -53,10 +53,10 @@ const UpdateProfileDailog = ({ open, setOpen }) => {
   
       const token = user?.token || localStorage.getItem("token");
 
-      if (!token) {
-          toast.error("User is not authenticated. Please log in again.");
-          return;
-      }
+      // if (!token) {
+      //     toast.error("User is not authenticated. Please log in again.");
+      //     return;
+      // }
 
 
       console.log("Token:", token);
