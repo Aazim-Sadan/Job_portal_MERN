@@ -38,7 +38,7 @@ const Jobs = () => {
                     </div>
                     {
                         filterJobs.length <= 0 ? <span className='sm:order-none order-2 font-medium text-gray-600 px-3 pt-3'>Job not found</span> : (
-                            <div className='flex-1 sm:order-none order-2  max-h-[80vh] overflow-y-auto pb-5 scrollbar-hide'>
+                            <div className='flex-1 sm:order-none order-2 h-[88vh] overflow-y-auto pb-5 scrollbar-hide'>
                                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                                     {
                                         filterJobs.map((job) => (
