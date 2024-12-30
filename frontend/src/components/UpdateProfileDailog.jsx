@@ -60,7 +60,7 @@ const UpdateProfileDailog = ({ open, setOpen }) => {
 
 
       console.log("Token:", token);
-      const res = await axios.post(`${USER_API_END_POINT}/profile/update`, formData, {
+      const res = await axios.post(`https://job-portal-mern-z2za.onrender.com/api/v1/user/profile/update`, formData, {
         headers: { "Authorization": `Bearer ${token}` },     
       })
 

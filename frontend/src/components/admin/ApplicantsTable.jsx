@@ -18,7 +18,7 @@ const ApplicantsTable = () => {
 
     const statusHandler = async (status, id) => {
         try {
-            const res = await axios.post(`${APPLICATION_API_END_POINT}/status/${id}/update`, { status },
+            const res = await axios.post(`https://job-portal-mern-z2za.onrender.com/api/v1/application/status/${id}/update`, { status },
                 {
                     headers: { "Authorization": `Bearer ${token}` },
                     withCredentials: true

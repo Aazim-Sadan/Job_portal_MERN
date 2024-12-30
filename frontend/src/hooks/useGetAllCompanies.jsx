@@ -23,7 +23,7 @@ const useGetAllCompanies = () => {
 
         const fetchCompanies = async () => {
             try {
-                const res = await axios.get(`${COMPANY_API_END_POINT}/get`,
+                const res = await axios.get(`https://job-portal-mern-z2za.onrender.com/api/v1/company/get`,
                     {
                         headers: { "Authorization": `Bearer ${token}` },
                         withCredentials: true

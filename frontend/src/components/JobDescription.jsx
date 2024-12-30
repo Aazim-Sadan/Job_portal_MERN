@@ -22,7 +22,7 @@ const JobDescription = () => {
 
     const applyJobHandler = async () => {
         try {
-            const res = await axios.get(`${APPLICATION_API_END_POINT}/apply/${jobId}`,
+            const res = await axios.get(`https://job-portal-mern-z2za.onrender.com/api/v1/application/apply/${jobId}`,
                 {
                     headers: { "Authorization": `Bearer ${token}` },
                     withCredentials: true

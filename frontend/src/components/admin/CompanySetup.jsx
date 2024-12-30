@@ -56,7 +56,7 @@ const CompanySetup = () => {
     }
     try {
       setLoading(true);
-      const res = await axios.put(`${COMPANY_API_END_POINT}/update/${params.id}`, formData,
+      const res = await axios.put(`https://job-portal-mern-z2za.onrender.com/api/v1/company/update/${params.id}`, formData,
         {
           headers: { "Authorization": `Bearer ${token}` },
           withCredentials: true

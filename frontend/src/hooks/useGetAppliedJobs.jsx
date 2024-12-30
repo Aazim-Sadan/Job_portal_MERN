@@ -13,7 +13,7 @@ const useGetAppliedJobs = () => {
         const fetchAppliedJobs = async () => {
 
             try {
-                const res = await axios.get(`${APPLICATION_API_END_POINT}/get`,
+                const res = await axios.get(`https://job-portal-mern-z2za.onrender.com/api/v1/application/get`,
                     {
                         headers: { "Authorization": `Bearer ${token}` },
                         withCredentials: true

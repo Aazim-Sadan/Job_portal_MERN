@@ -23,7 +23,7 @@ const useGetCompanyById = (companyId) => {
 
         const fetchSingleCompany = async () => {
             try {
-                const res = await axios.get(`${COMPANY_API_END_POINT}/get/${companyId}`,
+                const res = await axios.get(`https://job-portal-mern-z2za.onrender.com/api/v1/company/get/${companyId}`,
                     {
                         headers: { "Authorization": `Bearer ${token}` },
                         withCredentials: true

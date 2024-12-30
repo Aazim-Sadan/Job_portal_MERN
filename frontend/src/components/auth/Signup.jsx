@@ -51,7 +51,7 @@ const Signup = () => {
 
     try {
       dispatch(setLoading(true));
-      const res = await axios.post(`${USER_API_END_POINT}/register`, formData)
+      const res = await axios.post("https://job-portal-mern-z2za.onrender.com/api/v1/user/register", formData)
 
       navigate("/login");
       toast.success(res.data.message);

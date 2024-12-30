@@ -50,7 +50,7 @@ const PostJob = () => {
         try {
             setLoading(true);
 
-            const res = await axios.post(`${JOB_API_END_POINT}/post`, input,
+            const res = await axios.post(`https://job-portal-mern-z2za.onrender.com/api/v1/job/post`, input,
                 {
                     headers: { "Authorization": `Bearer ${token}` },
                     withCredentials: true

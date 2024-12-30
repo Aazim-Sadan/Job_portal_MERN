@@ -23,7 +23,7 @@ const useGetAllAdminJobs = () => {
 
         const fetchAllAdminJobs = async () => {
             try {
-                const res = await axios.get(`${JOB_API_END_POINT}/getadminjobs`,
+                const res = await axios.get(`https://job-portal-mern-z2za.onrender.com/api/v1/job/getadminjobs`,
                     {
                         headers: { "Authorization": `Bearer ${token}` },
                         withCredentials: true

@@ -24,7 +24,7 @@ const useGetAllJobs = () => {
 
         const fetchAllJobs = async () => {
             try {
-                const res = await axios.get(`${JOB_API_END_POINT}/get?keyword=${searchQuery}`,
+                const res = await axios.get(`https://job-portal-mern-z2za.onrender.com/api/v1/job/get?keyword=${searchQuery}`,
                     {
                         headers: { "Authorization": `Bearer ${token}` },
                         withCredentials: true

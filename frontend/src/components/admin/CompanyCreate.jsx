@@ -24,7 +24,7 @@ const CompanyCreate = () => {
 
     const registerNewCompany = async () => {
         try {
-            const res = await axios.post(`${COMPANY_API_END_POINT}/register`, {companyName},
+            const res = await axios.post(`https://job-portal-mern-z2za.onrender.com/api/v1/company/register`, {companyName},
                 {
                     headers: { "Authorization": `Bearer ${token}` },
                     withCredentials: true
