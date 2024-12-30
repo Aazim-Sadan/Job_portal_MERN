@@ -19,7 +19,7 @@ const _dirname = path.resolve();
 
 
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: 'https://job-portal-mern-z2za.onrender.com/',
     // origin: '*',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
