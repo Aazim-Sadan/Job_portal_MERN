@@ -21,7 +21,7 @@ const LatestJobs = () => {
                 transition={{ duration: 0.4 }}
             >
                 {
-                    allJobs.length <= 0 ? <span className='font-medium text-gray-600'>No Job Available</span> : allJobs?.slice(0, 6).map((job) =>
+                    allJobs.length <= 0 ? <span className='font-medium text-gray-600'>No Job Available</span> : allJobs?.slice(0, 30).map((job) =>
 
                         <LatestJobCards key={job._id} job={job} />
                     )
