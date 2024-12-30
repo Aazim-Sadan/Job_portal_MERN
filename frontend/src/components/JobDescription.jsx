@@ -55,7 +55,7 @@ const JobDescription = () => {
 
         const fetchSingleJob = async () => {
             try {
-                const res = await axios.get(`https://job-portal-mern-z2za.onrender.com/get/${jobId}`,
+                const res = await axios.get(`https://job-portal-mern-z2za.onrender.com/api/v1/job/get/${jobId}`,
                     {
                         headers: { "Authorization": `Bearer ${token}` },
                         withCredentials: true
