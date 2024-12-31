@@ -140,6 +140,8 @@ const Signup = () => {
                 <Label htmlFor="r2">Recruiter</Label>
               </div>
             </RadioGroup>
+          </div>
+          <div>
             <div className='flex items-center gap-2'>
               <Label>Profile</Label>
               <Input
