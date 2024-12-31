@@ -12,7 +12,8 @@ const category = [
     "Data Scientist",
     "Data Analyst",
     "SDE1",
-    "Fullstack Developer"
+    "Fullstack Developer",
+    "DevOps"
 ]
 
 
