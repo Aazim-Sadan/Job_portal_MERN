@@ -6,6 +6,7 @@ import { Badge } from './ui/badge'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setSavedJobs } from '@/redux/jobSlice'
+import { toast } from 'sonner'
 
 const Job = ({ job }) => {
 
@@ -19,6 +20,11 @@ const Job = ({ job }) => {
         const currentTime = new Date();
         const timeDifference = currentTime - createdAt;
         return Math.floor(timeDifference / (1000 * 24 * 60 * 60));
+    }
+
+    const handleSaveJob = () => {
+        dispatch(setSavedJobs(job));
+        toast.success(`Job titled "${job?.title}" has been saved successfully!`);
     }
 
     return (
@@ -55,7 +61,7 @@ const Job = ({ job }) => {
 
             <div className='flex items-center gap-4 mt-4'>
                 <Button onClick={() => navigate(`/description/${job?._id}`)} variant='outline'>Details</Button>
-                <Button onClick={() => dispatch(setSavedJobs(job))} className='bg-[#7209b7]'>Save For Later</Button>
+                <Button onClick={handleSaveJob} className='bg-[#7209b7]'>Save For Later</Button>
             </div>
         </div>
     )

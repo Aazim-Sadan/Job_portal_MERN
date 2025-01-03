@@ -12,11 +12,8 @@ const SavedJobs = () => {
     const { savedJobs } = useSelector(store => store.job);
 
     const handleDeleteJob = (jobId) => {
-        const jobToDelete = savedJobs.find(job => job.id === jobId);
-    
-        const jobTitle = jobToDelete ? jobToDelete.title : "the job"; 
         dispatch(removeSavedJob(jobId));
-        toast.success(`Job titled "${jobTitle}" has been deleted successfully!`);
+        toast.success(`Job has been deleted successfully!`);
     };
 
 
