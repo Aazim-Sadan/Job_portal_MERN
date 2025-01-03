@@ -13,8 +13,15 @@ const SavedJobs = () => {
 
     const handleDeleteJob = (jobId) => {
         const jobToDelete = savedJobs.find(job => job.id === jobId);
-        dispatch(removeSavedJob(jobId))
-        toast.success(`Job titled ${jobToDelete?.title} has been deleted successfully!`)
+
+        if(jobToDelete){
+            const jobTitle = jobToDelete?.title;
+            dispatch(removeSavedJob(jobId))
+            toast.success(`Job titled ${jobTitle} has been deleted successfully!`)
+        }else{
+            toast.error("Job not found")
+        }
+        
     }
 
 
