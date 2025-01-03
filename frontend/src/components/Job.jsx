@@ -42,7 +42,6 @@ const Job = ({ job }) => {
 
             <div>
                 <h1 className='font-bold text-lg my-2'>{job?.title}</h1>
-                {/* <p className='text-sm text-gray-600'>{job?.description}</p> */}
                 <p className='text-sm text-gray-600 overflow-hidden text-ellipsis'>
                     {job?.description?.length > 100 ? `${job?.description.slice(0, 78)}...` : job?.description}
                 </p>
