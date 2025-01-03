@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import SavedJobsCard from './SavedJobsCard';
 import { motion } from 'framer-motion';
 import { removeSavedJob } from '@/redux/jobSlice';
+import { toast } from 'sonner';
 
 const SavedJobs = () => {
 
@@ -12,6 +13,7 @@ const SavedJobs = () => {
 
     const handleDeleteJob = (jobId) => {
         dispatch(removeSavedJob(jobId))
+        toast.success(`Job titled ${savedJobs?.title} has been deleted successfully!`)
     }
 
 
